@@ -1,0 +1,21 @@
+<!doctype html>
+<head xmlns="http://www.w3.org/1999/html">
+<title>Приглашение!</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="invite_card">
+        <p style="margin-top: 20px;font-weight: bold; color: #213269;font-size: 60px;font-family: Arial,sans-serif">ПРИГЛАШЕНИЕ</p>
+        <p style="margin-top: -50px; font-weight: bolder">Приветствую, {{ name }}!</p>
+        <p style="color: #45224a">Если ты получил{% if not male %}а{% endif %} это, значит,
+            ты приглаш{% if not male %}ена{% else %}ён{% endif %} на днюху <b>Коляна Махоткина.</b> Празднование будет проходить
+            в сауне, <a href="http://silversauna.narod.ru/map.htm" title="Сауна!"><b>здесь</b></a>, 19 октября, начало в 17.00, не опоздай!</p>
+
+            <p style="display: inline; position: relative; top: -60px; left: -20px">Там есть <b>бильярд</b>: </p>
+            <img src="http://silversauna.narod.ru/vibor.files/image001.gif" width="200px" height="140px"/>
+            <p style="margin-top: 0px"><b>Но, к сожалению, приглашение пока недействительно и его нужно подтвердить.</b></p>
+            <form action="{{ invite_id }}" method="post">
+            <button type="submit" class="ack">Подтверждаю</button>
+        </form>
+    </div>
+</body>
